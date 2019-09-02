@@ -15,13 +15,13 @@ public class EntrepriseApiTest {
 		EntrepriseDTO[] resultatEntreprise = rt.getForObject("https://paie-api-cecile.herokuapp.com/entreprises",
 				EntrepriseDTO[].class);
 		
+		Assert.assertNotNull(resultatEntreprise);
+		
 		for (EntrepriseDTO liste : resultatEntreprise) {
 			Assert.assertNotNull(liste.getCode());
 			Assert.assertNotNull(liste.getDenomination());
 		}
-		
-		
-		Assert.assertNotNull(resultatEntreprise);
+			
 			}
 
 }
